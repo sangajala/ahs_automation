@@ -10,4 +10,6 @@ public class AutomationContants {
 
     public static final String SUPERADMIN_USERNAME = "07442382353";
     public static final String SUPERADMIN_PASSWORD = "Superadmin";
+    public static final String SUPERADMIN_P = "Superadmin";
+
 }
