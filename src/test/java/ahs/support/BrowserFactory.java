@@ -25,11 +25,6 @@ public class BrowserFactory {
         }
     }
 
-
-
-
-
-
     private static WebDriver invokeBrowser() {
 
         DesiredCapabilities caps = null;

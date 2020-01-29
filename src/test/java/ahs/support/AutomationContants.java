@@ -12,4 +12,9 @@ public class AutomationContants {
     public static final String SUPERADMIN_PASSWORD = "Superadmin";
     public static final String SUPERADMIN_P = "Superadmin";
 
+
+    public static String Old_Password = "Superadmin";
+    public static String New_Password = "Superadmin";
+    public static String Confirm_New_password = "Superadmin";
+
 }
