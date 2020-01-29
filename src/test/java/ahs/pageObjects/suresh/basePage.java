@@ -1,11 +1,10 @@
-package ahs.pageObjects;
+package ahs.pageObjects.suresh;
 
-import ahs.support.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 
 public class basePage {
 
-   public WebDriver driver;
+    WebDriver driver;
 
 
 //    public basePage(WebDriver browser) {
