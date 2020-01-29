@@ -1,5 +1,6 @@
 package ahs;
 
+import ahs.support.BrowserFactory;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,6 +17,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
         tags = {"@appointment"}
 )
 public class TestRunner {
+
+    public static boolean SauceLabs = true;
+    public static String BrowserName = "Chrome";
+    static WebDriver browser;
+
+    @BeforeClass
+    public static void initBrowser(){
+        browser = BrowserFactory.getBrowser();
+    }
+
+    @AfterClass
+    public static void close(){
+        browser.quit();
+        browser = null;
+    }
 
 }
 

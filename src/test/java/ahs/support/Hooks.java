@@ -17,15 +17,7 @@ public class Hooks {
 
     static WebDriver browser;
 
-    @BeforeClass
-    public static void initBrowser(){
-        browser = BrowserFactory.getBrowser();
-    }
-    @AfterClass
-    public static void close(){
-        browser.quit();
-        browser = null;
-    }
+
 
     @Before
     public static void setwindows() {
