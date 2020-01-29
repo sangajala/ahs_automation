@@ -14,7 +14,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin ={"pretty","html:target/cucumber-html-report"},
-        tags = {"@appointment"}
+//        tags = {"@AppointmentDetails"}
+        tags = {"@regression_darshan"}
 )
 public class TestRunner {
 
