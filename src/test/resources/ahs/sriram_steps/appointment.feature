@@ -4,10 +4,10 @@ Feature: Appointment Details
   Scenario Outline: Appointment record should be visible in this page with detail
 
     Given "Superadmin" logs into the application
-    When he navigate to "registration page"
-    And create an appointment with "<Name>","<Age>","<Gender>","<Doctor>","<Date>","<Time>","<Branch>","<Mobile>","<Address>","<Amount>"
-    When he navigate to "appointment page"
-    Then he should see the appointment record with "<Name>"
+#    When he navigate to "registration page"
+#    And create an appointment with "<Name>","<Age>","<Gender>","<Doctor>","<Date>","<Time>","<Branch>","<Mobile>","<Address>","<Amount>"
+#    When he navigate to "appointment page"
+#    Then he should see the appointment record with "<Name>"
 
 
     Examples:

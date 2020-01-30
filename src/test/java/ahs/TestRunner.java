@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin ={"pretty","html:target/cucumber-html-report"},
+        plugin ={"pretty","html:target/cucumber-html-report","json:target/cucumber.json"},
         tags = {"@appointment"}
 )
 public class TestRunner {
