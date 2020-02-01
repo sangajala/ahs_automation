@@ -1,11 +1,7 @@
 package ahs.suresh_steps;
 
 import ahs.pageObjects.LoginPageObject;
-import ahs.pageObjects.suresh.RegisterPageObject;
-import ahs.pageObjects.suresh.AppointmentsPageObject;
-import ahs.pageObjects.suresh.MasterPageObject;
-import ahs.pageObjects.suresh.MasterPageObject_AssignGroupTest;
-import ahs.pageObjects.suresh.MasterPageObject_SubTest;
+import ahs.pageObjects.suresh.*;
 import ahs.support.Utilites;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
@@ -23,6 +19,64 @@ public class MyStepdefs {
     MasterPageObject_SubTest masterPageObject_subTest;
     RegisterPageObject registerPageObject;
     AppointmentsPageObject appointmentsPageObject;
+    MasterPageObject_user masterPageObjectUser;
+
+
+//===================master  user detail=========================suresh
+
+
+    @When("^admin navigate to User details$")
+    public void admin_navigate_to_user_details() throws Throwable {
+        masterPageObjectUser =new MasterPageObject_user();
+        masterPageObjectUser.validateUserTab();
+    }
+    @And("^create a new user \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and \"([^\"]*)\"$")
+    public void create_a_new_user_somethingsomethingsomethingsomethingsomething_and_something
+            (String name, String mobilenumber, String emailid, String password, String userType, String branch) throws Throwable {
+        masterPageObjectUser.inputDetail(name,mobilenumber,emailid,password,userType,branch);
+    }
+    @Then("^the user should be created successfully$")
+    public void the_user_should_be_created_successfully() throws Throwable {
+        masterPageObjectUser.submitButton();
+    }
+    @Then("^admin should navigate to user detail page$")
+    public void admin_should_navigate_to_user_detail_page() throws Throwable {
+        String text=masterPageObjectUser.pageText();
+        Assert.assertEquals(text,"USER DETAILS");
+    }
+    @Then("^admin should see the record with Name \"([^\"]*)\"$")
+    public void admin_should_see_the_record_with_name_something(String strArg1) throws Throwable {
+        boolean text=masterPageObjectUser.verifyUserDetailsInList(strArg1);
+        Assert.assertTrue(text);
+    }
+    @Then("^admin should see the error message for duplicate data$")
+    public void admin_should_see_the_error_message_for_duplicate_data() throws Throwable {
+        boolean errorMessage=masterPageObjectUser.verifyErrorMessage();
+        Assert.assertTrue(errorMessage);
+    }
+    @And("^admin should click on cancel button$")
+    public void admin_should_click_on_cancel_button() throws Throwable {
+        masterPageObjectUser.cancelButton();
+    }
+    @And("^admin should edit available user (.+) detail$")
+    public void admin_should_edit_available_user_detail(String name) throws Throwable {
+        masterPageObjectUser.editDetail(name);
+    }
+    @And("^admin should delete available user (.+) detail$")
+    public void admin_should_delete_available_user_detail(String name) throws Throwable {
+        masterPageObjectUser.deleteDetail(name);
+    }
+    @When("^admin enter deleted user (.+) by search$")
+    public void admin_enter_deleted_user_by_search(String name) throws Throwable {
+        masterPageObjectUser.searchDeletedName(name);
+    }
+    @Then("^admin should see the display message$")
+    public void admin_should_see_the_display_message() throws Throwable {
+        boolean message=masterPageObjectUser.verifyDisplayMessage1();
+        Assert.assertTrue(message);
+    }
+
+
 
     //========master group test features step- def=========================suresh==
     @Given("^\"([^\"]*)\" login into the application$")
@@ -136,7 +190,7 @@ public class MyStepdefs {
     public void admin_should_click_on_submit_button() throws Throwable {
         masterPageObject_subTest.validateSubmiteBtn();
     }
-    @Then("^admin should retuen to SUB TEST PRICE LIST page$")
+    @Then("^admin should return to SUB TEST PRICE LIST page$")
     public void admin_should_retuen_to_sub_test_price_list_page() throws Throwable {
         String url=masterPageObject_subTest.validateReturnPage();
         Assert.assertEquals(url,"http://ahs.bananaapps.co.uk/Master/SubTestPricesList");
